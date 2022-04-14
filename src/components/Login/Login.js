@@ -60,12 +60,23 @@ const Login = () => {
           {loading && <p>Loading...</p>}
           <input className="form-submit" type="submit" value="Login" />
         </form>
-        <p>
-          New to Ema-John?{" "}
-          <Link className="form-link" to="/signup">
-            Create an account
-          </Link>
-        </p>
+        <div className="or-section">
+          <div className="or-border"></div>
+          <div>
+            <p>OR</p>
+          </div>
+          <div className="or-border"></div>
+        </div>
+        <div className="create-account-section">
+          <p>
+            <small>
+              New to Ema-John?{" "}
+              <Link className="form-link" to="/signup">
+                Create an account
+              </Link>
+            </small>
+          </p>
+        </div>
       </div>
     </div>
   );

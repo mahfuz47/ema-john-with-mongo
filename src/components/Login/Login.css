@@ -50,3 +50,22 @@
   color: #ff9900;
   text-decoration: none;
 }
+
+.or-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0;
+}
+.or-section p {
+  margin: 0 15px;
+}
+.or-border {
+  border: 1px solid rgb(207, 207, 207);
+  width: 10em;
+}
+
+.create-account-section {
+  display: flex;
+  justify-content: center;
+}

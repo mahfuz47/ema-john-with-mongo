@@ -1,15 +1,16 @@
 import React from "react";
 import useProducts from "../../Hooks/useProducts";
-import UseCart from "../useCart/UseCart";
+
 import Cart from "../Cart/Cart";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import { removeFromDb } from "../../utilities/fakedb";
 import { Link } from "react-router-dom";
 import "./Orders.css";
+import useCart from "../../Hooks/useCart";
 
 const Orders = () => {
-  const [products, setProducts] = useProducts();
-  const [cart, setCart] = UseCart(products);
+  const [products] = useProducts();
+  const [cart, setCart] = useCart(products);
   const handleRemoveProduct = (product) => {
     const rest = cart.filter((pd) => pd.id !== product.id);
     setCart(rest);
