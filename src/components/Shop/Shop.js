@@ -4,7 +4,7 @@ import useCart from "../../Hooks/useCart";
 
 import { addToDb } from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
-import Product from "../Products/Products";
+import Products from "../Products/Products";
 import "./Shop.css";
 
 const Shop = () => {
@@ -16,13 +16,15 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product?page=${page}&size=${size}`)
+    fetch(
+      `https://pacific-fortress-14255.herokuapp.com/product?page=${page}&size=${size}`
+    )
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [page, size]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/productCount")
+    fetch("https://pacific-fortress-14255.herokuapp.com/productCount")
       .then((res) => res.json())
       .then((data) => {
         const count = data.count;
@@ -68,11 +70,11 @@ const Shop = () => {
     <div className="shop-container">
       <div className="products-container">
         {products.map((product) => (
-          <Product
+          <Products
             key={product._id}
             product={product}
             handleAddToCart={handleAddToCart}
-          ></Product>
+          ></Products>
         ))}
 
         <div className="pagination">
